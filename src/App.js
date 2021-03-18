@@ -1,3 +1,4 @@
+import React from "react";
 // import { BrowserRouter } from "react-router-dom";
 // import { PrimaryButton } from "./components/atoms/button/PrimaryButton";
 // import { SecondaryButton } from "./components/atoms/button/SecondaryButton";
@@ -5,8 +6,9 @@
 // import { UserCard } from "./components/organisms/user/UserCard";
 // import { DefaultLayout } from "./components/templates/DefaultLayout";
 // import { HeaderOnly } from "./components/templates/HeaderOnly";
-import { Router } from "./router/Router";
 import "./styles.css";
+import { Router } from "./router/Router";
+import { UserProvider } from "./providers/UserProvider";
 
 export default function App() {
   return (
@@ -20,6 +22,8 @@ export default function App() {
 //       <UserCard user={user} />
 //     </DefaultLayout>
 // </BrowserRouter>
-    <Router />
+    <UserProvider>
+      <Router />
+    </UserProvider>
   );
 }
