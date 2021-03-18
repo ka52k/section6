@@ -9,6 +9,7 @@ import React from "react";
 import "./styles.css";
 import { Router } from "./router/Router";
 import { UserProvider } from "./providers/UserProvider";
+import { RecoilRoot } from "recoil";
 
 export default function App() {
   return (
@@ -22,8 +23,10 @@ export default function App() {
 //       <UserCard user={user} />
 //     </DefaultLayout>
 // </BrowserRouter>
-    <UserProvider>
-      <Router />
-    </UserProvider>
+    <RecoilRoot>
+      <UserProvider>
+        <Router />
+      </UserProvider>
+    </RecoilRoot>
   );
 }
